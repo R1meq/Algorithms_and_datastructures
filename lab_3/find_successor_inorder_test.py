@@ -42,3 +42,8 @@ class TestBinaryTree(unittest.TestCase):
         node = BinaryTree(99)
         successor = find_successor(self.root, node)
         self.assertIsNone(successor)
+
+    def test_find_successor_root_node(self):
+        node = self.root
+        successor = find_successor(self.root,  node)
+        self.assertEqual(successor.value, 12)
