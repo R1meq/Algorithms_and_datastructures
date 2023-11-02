@@ -12,13 +12,6 @@ def find_successor(tree: BinaryTree, node: BinaryTree) -> BinaryTree:
     if node.parent == None and node.left == None and node.right == None:
         return None
 
-
-    if node.parent == tree:
-        current = node.right
-        while current.left:
-            current = current.left
-        return current
-
     if node.right:
         current = node.right
         while current.left:
