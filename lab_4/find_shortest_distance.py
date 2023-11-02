@@ -5,8 +5,9 @@ row = [2, 2, -2, -2, 1, 1, -1, -1]
 col = [-1, 1, 1, -1, 2, -2, 2, -2]
 LENGTH = len(row)
 
+
 class Node:
-    def __init__(self, x, y, step):
+    def __init__(self, x, y, step=0):
         self.x = x
         self.y = y
         self.step = step
@@ -16,6 +17,7 @@ class Node:
 
     def __eq__(self, other):
         return self.x == other.x and self.y == other.y
+
 
 def is_valid(x, y, N):
     return 0 <= x < N and 0 <= y < N
@@ -33,6 +35,8 @@ def find_shortest_distance(src, dest, N):
         print(f"[x: {x}, y: {y}] step: {step}")
 
         if x == dest.x and y == dest.y:
+            with open("output.txt", "w") as output_file:
+                output_file.write(str(step))
             return step
 
         for k in range(LENGTH):
