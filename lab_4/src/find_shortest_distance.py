@@ -1,9 +1,8 @@
 from collections import deque
 
-
-row = [2, 2, -2, -2, 1, 1, -1, -1]
-col = [-1, 1, 1, -1, 2, -2, 2, -2]
-LENGTH = len(row)
+KNIGHT_X_COORDINATES = [2, 2, -2, -2, 1, 1, -1, -1]
+KNIGHT_Y_COORDINATES = [-1, 1, 1, -1, 2, -2, 2, -2]
+LENGTH = len(KNIGHT_X_COORDINATES)
 
 
 class Node:
@@ -19,11 +18,11 @@ class Node:
         return self.x == other.x and self.y == other.y
 
 
-def is_valid(x, y, N):
-    return 0 <= x < N and 0 <= y < N
+def is_within_board(x, y, board_size):
+    return 0 <= x < board_size and 0 <= y < board_size
 
 
-def find_shortest_distance(src, dest, N):
+def find_shortest_distance(src, dest, board_size):
     visited = set()
     queue = deque()
 
@@ -40,12 +39,12 @@ def find_shortest_distance(src, dest, N):
             return step
 
         for k in range(LENGTH):
-            x1 = x + row[k]
-            y1 = y + col[k]
-            step1 = step + 1
+            next_x = x + KNIGHT_X_COORDINATES[k]
+            next_y = y + KNIGHT_Y_COORDINATES[k]
+            next_step = step + 1
 
-            if is_valid(x1, y1, N):
-                neighbor = Node(x1, y1, step1)
+            if is_within_board(next_x, next_y, board_size):
+                neighbor = Node(next_x, next_y, next_step)
                 if neighbor not in visited:
                     queue.append(neighbor)
                     visited.add(neighbor)
