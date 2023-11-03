@@ -5,7 +5,7 @@ KNIGHT_Y_COORDINATES = [-1, 1, 1, -1, 2, -2, 2, -2]
 LENGTH = len(KNIGHT_X_COORDINATES)
 
 
-class Node:
+class Vertex:
     def __init__(self, x, y, step=0):
         self.x = x
         self.y = y
@@ -44,7 +44,7 @@ def find_shortest_distance(src, dest, board_size):
             next_step = step + 1
 
             if is_within_board(next_x, next_y, board_size):
-                neighbor = Node(next_x, next_y, next_step)
+                neighbor = Vertex(next_x, next_y, next_step)
                 if neighbor not in visited:
                     queue.append(neighbor)
                     visited.add(neighbor)
