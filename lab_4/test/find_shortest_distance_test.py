@@ -1,6 +1,6 @@
 import unittest
 
-from lab_4.find_shortest_distance import find_shortest_distance, Node
+from lab_4.src.find_shortest_distance import find_shortest_distance, Node
 
 
 class MyTestCase(unittest.TestCase):

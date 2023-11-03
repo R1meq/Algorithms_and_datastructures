@@ -35,7 +35,7 @@ def find_shortest_distance(src, dest, N):
         print(f"[x: {x}, y: {y}] step: {step}")
 
         if x == dest.x and y == dest.y:
-            with open("output.txt", "w") as output_file:
+            with open("../test/output.txt", "w") as output_file:
                 output_file.write(str(step))
             return step
 
