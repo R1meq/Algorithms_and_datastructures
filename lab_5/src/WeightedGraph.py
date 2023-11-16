@@ -1,8 +1,3 @@
-import queue
-
-from lab_5.src.WeightedVertex import WeightedVertex
-
-
 class WeightedGraph:
     def __init__(self, vertex_list, client_vertex_list):
         self.vertex_list = vertex_list
