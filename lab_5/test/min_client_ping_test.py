@@ -1,7 +1,7 @@
 import unittest
 
-from lab_5.src.WeightedGraph import WeightedGraph
-from lab_5.src.WeightedVertex import WeightedVertex
+from lab_5.src.weighted_graph import WeightedGraph
+from lab_5.src.weighted_vertex import WeightedVertex
 
 
 class TestMinClientPing(unittest.TestCase):
